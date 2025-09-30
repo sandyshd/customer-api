@@ -1,0 +1,106 @@
+# .NET Core
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# Build Results
+[Dd]ebug/
+[Rr]elease/
+build/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# NPM Packages
+node_modules/
+
+# Others
+*.log
+*.DS_Store
+*.pdb
+*.mdb
+*.dbmdl
+*.bak
+*.swp
+*.tmp
+*.vspscc
+*.vssscc
+
+# Resharper
+_Resharper*/
+*.DotSettings.user
+
+# Azure
+*.azure-pipelines.yml
+
+# Mac
+*.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# JetBrains
+.idea/
+*.dotCover
+
+# Test Results
+TestResults/
+
+# Publish
+publish/
+
+# Entity Framework
+migrations/
+
+# Coverage
+coverage/
+
+# Local History
+.localhistory/
+
+# Others
+*.ncrunch*
+*.ndoc*
+*.sln.cache
+*.sln.ide
+*.sln.docstates
+
+# Temporary files
+~$*
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# DotCover
+*.dotCover
+
+# VS Code
+.vscode/
