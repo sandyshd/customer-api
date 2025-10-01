@@ -4,3 +4,68 @@ GET {{CustomerAPIApp_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+#########################################################################
+### Customer API Tests
+#########################################################################
+### Test GET API
+GET https://localhost:7208/api/customers
+Content-Type: application/json
+
+### Test POST API
+POST https://localhost:7208/api/customers
+Content-Type: application/json
+
+{
+  "id": 20,
+  "firstName": "First20",
+   "lastName": "Last20",
+  "email": "customer20@example.com"
+}
+
+### Test PUT API
+PUT https://localhost:7208/api/customers/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "UpdatedFirst1",
+  "lastName": "UpdatedLast1",
+  "email": "customer1@example.com"
+}
+
+### Test DELETE API
+DELETE https://localhost:7208/api/customers/20
+Content-Type: application/json
+
+#########################################################################
+### Product API Tests
+#########################################################################
+### Test GET API
+GET https://localhost:7208/api/products
+Content-Type: application/json
+
+### Test POST API
+POST https://localhost:7208/api/products    
+Content-Type: application/json
+
+{
+  "id": 21,
+  "name": "Product21",
+  "description": "Description21",
+  "price": 100
+}
+
+### Test PUT API
+PUT https://localhost:7208/api/products/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "UpdatedProduct1",
+  "description": "UpdatedDescription1",
+  "price": 150
+}
+
+### Test DELETE API
+DELETE https://localhost:7208/api/products/21
+Content-Type: application/json

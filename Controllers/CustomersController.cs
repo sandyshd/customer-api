@@ -61,7 +61,7 @@ namespace CustomerAPIApp.Controllers
                 return NotFound();
             }
             Customers.Remove(customer);
-            return NoContent();
+            return Ok("Customer deleted successfully");
         }
     }
 }
