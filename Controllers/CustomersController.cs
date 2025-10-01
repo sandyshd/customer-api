@@ -37,5 +37,31 @@ namespace CustomerAPIApp.Controllers
             Customers.Add(customer);
             return CreatedAtAction(nameof(Get), new { id = customer.Id }, customer);
         }
+
+        [HttpPut("{id}")]
+        public ActionResult<Customer> Put(int id, [FromBody] Customer updatedCustomer)
+        {
+            var customer = Customers.FirstOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            customer.FirstName = updatedCustomer.FirstName;
+            customer.LastName = updatedCustomer.LastName;
+            customer.Email = updatedCustomer.Email;
+            return Ok(customer);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var customer = Customers.FirstOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+            Customers.Remove(customer);
+            return NoContent();
+        }
     }
 }
