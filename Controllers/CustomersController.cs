@@ -24,12 +24,21 @@ namespace CustomerAPIApp.Controllers
             })
             .ToList();
 
+        /// <summary>
+        /// Gets all customers.
+        /// </summary>
+        /// <returns>List of customers.</returns>
         [HttpGet]
         public ActionResult<IEnumerable<Customer>> Get()
         {
             return Ok(Customers);
         }
 
+        /// <summary>
+        /// Adds a new customer.
+        /// </summary>
+        /// <param name="customer">Customer object to add.</param>
+        /// <returns>The created customer.</returns>
         [HttpPost]
         public ActionResult<Customer> Post([FromBody] Customer customer)
         {
@@ -38,6 +47,12 @@ namespace CustomerAPIApp.Controllers
             return CreatedAtAction(nameof(Get), new { id = customer.Id }, customer);
         }
 
+        /// <summary>
+        /// Updates an existing customer by ID.
+        /// </summary>
+        /// <param name="id">Customer ID.</param>
+        /// <param name="updatedCustomer">Updated customer object.</param>
+        /// <returns>The updated customer.</returns>
         [HttpPut("{id}")]
         public ActionResult<Customer> Put(int id, [FromBody] Customer updatedCustomer)
         {
@@ -52,6 +67,11 @@ namespace CustomerAPIApp.Controllers
             return Ok(customer);
         }
 
+        /// <summary>
+        /// Deletes a customer by ID.
+        /// </summary>
+        /// <param name="id">Customer ID.</param>
+        /// <returns>Success message if deleted.</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
