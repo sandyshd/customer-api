@@ -24,12 +24,21 @@ namespace CustomerAPIApp.Controllers
             })
             .ToList();
 
+        /// <summary>
+        /// Gets all products.
+        /// </summary>
+        /// <returns>List of products.</returns>
         [HttpGet]
         public ActionResult<IEnumerable<Product>> Get()
         {
             return Ok(Products);
         }
 
+        /// <summary>
+        /// Adds a new product.
+        /// </summary>
+        /// <param name="product">Product object to add.</param>
+        /// <returns>The created product.</returns>
         [HttpPost]
         public ActionResult<Product> Post([FromBody] Product product)
         {
@@ -38,6 +47,12 @@ namespace CustomerAPIApp.Controllers
             return CreatedAtAction(nameof(Get), new { id = product.Id }, product);
         }
 
+        /// <summary>
+        /// Updates an existing product by ID.
+        /// </summary>
+        /// <param name="id">Product ID.</param>
+        /// <param name="updatedProduct">Updated product object.</param>
+        /// <returns>The updated product.</returns>
         [HttpPut("{id}")]
         public ActionResult<Product> Put(int id, [FromBody] Product updatedProduct)
         {
@@ -52,6 +67,11 @@ namespace CustomerAPIApp.Controllers
             return Ok(product);
         }
 
+        /// <summary>
+        /// Deletes a product by ID.
+        /// </summary>
+        /// <param name="id">Product ID.</param>
+        /// <returns>Success message if deleted.</returns>
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
